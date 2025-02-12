@@ -1,4 +1,5 @@
 library(DescTools)
+# dose-response trend test
 data <- matrix(c(20, 78, 34, 66, 48, 42), nrow = 3, byrow = TRUE)
 data
 
@@ -7,13 +8,16 @@ rownames(data) <- c("Low", "Medium", "high")
 
 print(data)
 
-# Load the DescTools package for Cochran-Armitage test
 
-
-
-
-# Apply the Cochran-Armitage test
 result <- CochranArmitageTest(data)
 print(result)
 
-# ...existing code...
+# education level and helath outcome
+data2 <- matrix(c(15, 83, 26, 70, 40, 64), nrow = 3, byrow = TRUE)
+
+colnames(data2) <- c("Condition Present", "Condition Absent")
+rownames(data2) <- c("High School", "Bachelor", "Master")
+print(data2)
+
+result2 <- CochranArmitageTest(data2)
+print(result2)
